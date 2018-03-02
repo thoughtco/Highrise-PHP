@@ -32,7 +32,8 @@ class Highrise {
 	function __construct($subdomain, $token){
 	
 		// subdomain
-		$subdomain = array_shift(explode('.', $subdomain));
+		$exploded = explode('.', $subdomain);
+		$subdomain = array_shift($exploded);
 		$this->apiUrl = str_replace('{sub}', $subdomain, $this->apiUrl);
 		
 		// token
